@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 400px;
+            width: 800px;
+            background-color: rgb(238, 223, 223);
+            overflow: auto;
+            
+
+        }
+        button{
+            text-align: center;
+            margin-left: 200px;
+            margin-bottom: 5px;
+            justify-content: center;
+            padding: 0px 67px;
+        }
+        body{
+            
+            margin-left: 20%;
+            
+        }
+        .box{
+            height: 400px;
+            width: 250px;
+            background-color: aquamarine;
+            /* display: inline-block; */
+
+        }
+        .box h1{
+            background-color: red;
+            margin-bottom: 1px;
+            margin-top: 1px;
+            text-align: center;
+        }
+        .box h2,h3{
+            background-color: brown;
+            justify-content: center;
+            margin-top: 1px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .box img{
+            width: 249px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            console.log("Ready state change : ",xhr.readyState);
+            if(xhr.status==200&&xhr.readyState==4){
+                var hero= xhr.responseXML.getElementsByTagName("hl");//this hl tag is of data.xml
+                //this will fetch all the hl tag in the data.xml file
+                
+                for( var i=0;i<hero.length;i++){
+                    //  document.getElementById("hl").innerHTML+= "<li>" +hero[i].getElementsByTagName("title")[0].firstChild.nodeValue +"</li>"
+                    //  document.getElementById("hll").innerHTML+= "<li>" +hero[i].querySelector("title").innerHTML;
+                    // the hll tag used here is to display the content in ol 
+                    document.getElementById("log").innerHTML+= "<div class='box'><h1>"+ hero[i].querySelector("title").innerHTML+"</h1><h2> Full Name"+hero[i].querySelector("firstname").innerHTML +" "+hero[i].querySelector("lastname").innerHTML +"</h2><img src='"+hero[i].querySelector('poster').innerHTML+"'alt='"+hero[i].querySelector("title").innerHTML+"'><h3>City :"+ hero[i].querySelector("city").innerHTML+"</h3><h3>Ticket Price :"+ hero[i].querySelector("ticketprice").innerHTML+"</h3><h3>Release Date  :"+hero[i].querySelector("releasedate").innerHTML+"</h3></div";
+                }
+                
+            }
+            else{
+                console.log(xhr.readyState);
+                // document.getElementById("log").innerText += "XHR Staus" + xhr.status+"| XHR status TExt :"+xhr.statusText; 
+            }
+                    };
+                    document.addEventListener("DOMContentLoaded",function(){
+                        xhr.open("get","data.xml",true);
+                        document.getElementsByTagName("button")[0].addEventListener("click",function(){
+                            xhr.send();
+                            console.log("button clicked");
+
+                        })
+                    })
+</script>
+</head>
+<body>
+    <button>Fetch Data</button>
+    <div id="log">
+    <!-- <ol id="hll"></ol> -->
+    
+    </div>
+    
+</body>
+</html>

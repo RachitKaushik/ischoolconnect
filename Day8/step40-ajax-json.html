@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 600px;
+            background-color: brown;
+            overflow: auto;
+
+        }
+        button{
+            text-align: center;
+            margin-left: 200px;
+            margin-bottom: 5px;
+            justify-content: center;
+            padding: 0px 67px;
+        }
+        body{
+            
+            margin-left: 25%;
+            
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            console.log("Ready state change : ",xhr.readyState);
+            if(xhr.status==200&&xhr.readyState==4){
+                var herodata = JSON.parse(xhr.responseText).herolist;
+                console.log(herodata.length);
+                for( var i=0;i<herodata.length;i++){
+                    
+                      document.getElementById("hll").innerHTML+= "<li>" +herodata[i].title +"</li>";
+                    //  document.getElementById("hll").innerHTML+= "<li>" +herodata[i].querySelector("title").innerHTML;
+                    // the hll tag used here is to display the content in ol 
+                }
+                
+            }
+            else{
+                console.log(xhr.readyState);
+                // document.getElementById("log").innerText += "XHR Staus" + xhr.status+"| XHR status TExt :"+xhr.statusText; 
+            }
+                    };
+                    document.addEventListener("DOMContentLoaded",function(){
+                        xhr.open("get","data.json",true);
+                        document.getElementsByTagName("button")[0].addEventListener("click",function(){
+                            xhr.send();
+                            console.log("button clicked");
+                        })
+                    })
+</script>
+</head>
+<body>
+    <button>Fetch Data</button>
+    <!-- <div id="log"></div> -->
+    <ol id="hll"></ol>
+    
+</body>
+</html>
