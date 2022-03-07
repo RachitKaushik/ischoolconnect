@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s ="Rachit Kaushik";
+    var a = s.charAt(0);
+    console.log(a);
+    console.log(s.charAt(s.length-1));
+    console.log(s.substring(1,5)); // including the char at 1 and excluding the char at 5
+    console.log(s.slice(1,5)); // it will work same as the substring
+    console.log(s.slice(-4)); // it will take the last 4 character of the string i.e shik
+    console.log(s.slice(-7)); // include the last 7 character of the string stored in s
+    console.log(s.indexOf("c"));  //it will print the position of c
+    console.log(s.indexOf("K"));
+    console.log(s.lastIndexOf("k")); // count from the starting point the last occuring of the letter k 
+    console.log(s.indexOf("c" ,3)); // first parameter is the letter and second to start from which position and search after that
+    // doubt : displaying -1 
+    console.log(s.split(" ")); //to convert string into array
+    console.log(s.replace("c","C"));
+    console.log(s.toLocaleLowerCase()); //converted the text to lowercase
+    console.log(s.toUpperCase()); //converted the text to uppercase
+
+    // some escape character
+      var b ="Here is a text";
+      console.log(b);
+      console.log("Here is a \"Quoted\" text");
+      console.log("It\'s a boy");
+      console.log("Here is some text to test the escape \b character");
+      console.log("Here is some text to test the escape \t character");
+      console.log("Here is some text to test the escape \n character");
+      console.log("Here is some text to test the escape \v character");
+      console.log("Here is some text to test the escape \r character");
+       
+
+
+    </script>
+    
+</body>
+</html>

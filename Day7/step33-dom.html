@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=(device-width), initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         addEventListener("load",function(){
+            alert(document.body.childNodes.length);
+             alert(document.body.children.length);
+         document.getElementsByTagName("p")[1].innerText="Selected";
+        // document.body.children[3].children[0].innerText="Sellected";
+        console.log(document.body.children[3].children[0].childNodes[0].nodeValue);
+        console.log(document.body.children[3].children[0].textContent);
+        console.log(document.body.children[3].children[0].innerText);
+        console.log(document.body.children[3].children[0].innerHTML);
+        console.log( document.getElementsByTagName("p")[0].innerText);
+
+
+         });
+        // alternate
+
+        // onload = function(){
+        //     alert(document.body.childNodes.length);
+        //     alert(document.body.children.length);
+        // }
+    </script>
+</head>
+<body>
+    <!-- comments are also be counted as children -->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo corporis perferendis aspernatur numquam tempore ea non, rem, eveniet quisquam enim magnam maiores quas quo hic harum possimus ullam impedit doloremque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quia, eum sequi quam quidem libero quisquam deserunt officiis omnis nemo vitae natus. Sint fuga ipsum consequuntur, exercitationem facilis vel officiis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti corrupti provident ratione corporis ex illum hic in perferendis non laborum asperiores sint tenetur cumque quas cum, delectus sunt nobis natus?</p>
+    <ul>
+        <li>List <span>Item 1</span></li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+</body>
+</html>

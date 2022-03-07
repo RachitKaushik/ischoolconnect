@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function init(){
+        //     document.body.innerHTML="The changed content";
+        
+        // }
+        // console.log("onload function");
+        </script>
+
+</head>
+
+    <body>
+    <hgroup>
+        <h1>Heading 1</h1>
+        <h3>This is the second heading</h3>
+
+    </hgroup>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore rerum consectetur sequi consequatur delectus, maiores laudantium id nam repellendus, error modi veniam, eius cumque officiis amet voluptate molestias sunt aliquid?</p>
+
+    
+        <form id="first form">
+        <label for="fname">firstname: </label>.
+        <input type="text" name="fname" value="Rachit"/>
+        </form>
+
+        <form id="last form">
+            <label for="lname">lastname: </label>.
+            <input type="text" name="lname"/>
+            </form>
+
+            <img src="1.jpg" alt="example"/>
+
+
+
+            <a href="firstlink" >First Link</a>
+            <a href="secondlink">Second link</a>
+
+    
+<script>
+     document.body.style.color="blue";
+    console.log("body");
+    document.title="New title";
+    var a = document.forms[0];  //display the first form in the console
+    console.log(a);
+    // console.log(document.forms[0]); you can write direct also
+
+   var cc= document.forms.namedItem("last form").innerHTML; // it will display the form content with the help of id
+   console.log(cc);
+   console.log(document.images[0]);
+   console.log(document.images[0].alt);
+   console.log(document.images[0].src);
+   console.log(document.scripts[0]);
+   console.log(document.scripts[1].text);
+   console.log(document.links[0]);
+   console.log(document.links[0].href);
+</script>
+</body>
+</html>

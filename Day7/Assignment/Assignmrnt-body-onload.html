@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 400px;
+            background-color: blueviolet;
+            padding: 5px;
+            margin: 50px auto;
+            border: 1px solid transparent;
+            overflow: auto;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(213, 201, 224);
+            padding: 5px;
+            margin: 5px;
+           line-height: 100px;
+           font-size: 30px;
+           font-family: 'Courier New', Courier, monospace;
+           text-align: center;
+           float: left;
+        }
+    </style>
+    <script>
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",addHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click",removeHandler);
+            console.log("init");
+        }
+
+        function addHandler(){
+            var element = document.createElement("div");
+            document.getElementsByClassName("container")[0].appendChild(element);
+            console.log("addHAndler")
+        }
+         
+         function removeHandler(){
+             console.log("remove Handler");
+             var element= document.getElementsByClassName("container")[0].lastChild;
+             document.getElementsByClassName("container")[0].removeChild(element);
+
+
+         }
+    </script>
+
+</head>
+<body onload="init()">
+    <button>ADD Button</button>
+    <button>Remove Button</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>
