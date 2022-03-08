@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var vals=[45,23,24,49,23,65,07,99,34,44,08,53];
+    //forEach
+        vals.forEach(val=>console.log(val*2));
+
+
+       
+
+        //map
+        var doublevals = vals.map(val=> val*2 );
+        console.log(vals);
+        console.log(doublevals);
+
+
+        //filter
+        var greaterThan50= vals.filter(vals=> vals>50);
+        console.log(greaterThan50);
+      
+        //to check every value
+        //every
+
+        var allGreaterThan50 = vals.every(val => val>5);
+        console.log(allGreaterThan50);
+
+        //to check for some value
+        //some
+        var someGreaterThan50 = vals.some(val=>val>50);
+        console.log(someGreaterThan50);
+
+        //some
+        var someGreaterThan50 = vals.some(function(val){ //here val is the value , if passed 2nd argumnet it will be the index,  3rd be the array
+            return val>50 });
+        console.log(someGreaterThan50);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

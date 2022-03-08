@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Improvement</title>
+    <script>
+       /* // num1 = 0,num2=0 this is a default parameter
+        //default parameter  
+        function adder(num1 = 0,num2=0){
+            return num1+num2;
+        };
+        console.log(adder(5,6));
+        //if only one agrument is passed
+        console.log(adder(5)); // nan which means not a number , if default parameter is not assigned 
+        console.log(adder(null,5)); //null is defined 0  here   0+5=5 */
+
+
+
+
+      /*  //arguments keyword , it is a property
+        // but not in use now (depricated)
+        function adder(){ 
+            var total = 0;
+            for(var i=0; i<arguments.length;i++){ //arguments will take any no of arguments passed implicitly
+                total=total+arguments[i];
+            }
+            return total;
+        }; */
+
+
+
+        //Rest Parameter
+        function adder(...nums){ //... 3 dota defines the rest i.e. num1,num2,...nums 
+            var total = 0;
+            for(var i=0; i<nums.length;i++){
+                total=total+nums[i];
+            }
+            return total;
+        }; 
+
+        console.log(adder(5));
+        console.log(adder(5,6));
+        console.log(adder(5,6,7));
+        //you can pass any number of parameter 
+
+        
+
+
+        //if to add a array
+        // Spread syntax concept
+        function adder(...nums){ //... 3 dota defines the rest i.e. arr[0],arr[1],...arr[n] 
+            var total = 0;
+            for(var i=0; i<nums.length;i++){
+                total=total+nums[i];
+            }
+            return total;
+        }; 
+        var arr=[5,6,7,8,9];
+        console.log( adder(...arr)); //will display 35
+        console.log(...arr); //display all the array element
+
+        // adding an array is called as spread syntax
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

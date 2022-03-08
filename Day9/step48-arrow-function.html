@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      /*  function adder(num1 = 0,num2=0){
+            return num1+num2;
+        };
+        var adder = function (num1 ,num2){
+            return num1+num2;
+        } */
+
+
+        
+        //arrow function will always heads(points) to its parent
+        var adder =num1=>num1+num1; // is there is only one argument their is no need of brackeet
+        // if the code is of one line then it will implicitly return the first line
+        console.log(adder(5));
+
+
+        //same as above
+        var addera=(num1,num2)=>{  //2 parameter are passed so bracket required"()""
+            return num1+num2;      // it is a one line code hence using paranthesis is optional
+        }
+        console.log(addera(4,5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

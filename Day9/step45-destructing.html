@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var hero = {
+            firstname : "Rachit",
+            lastname : "kaushik",
+            title  :  " Student",
+            power : 7,
+            city : "Rorrkee"
+        };
+        console.log(hero.title);
+       // heroprop as a pointer
+       /* var heroprop = hero;
+        console.log(heroprop.title,hero.title);
+
+        heroprop.title= "IRONMAN";
+        console.log(heroprop.title,hero.title); // both will come in uppercase because heroprop is used as a pointer here, instead use destructuring */
+
+        //to remove the pointer problem
+        //es3 concept
+        /* var herotitle = hero.title,
+         herofirstname= hero.firstname,
+         herolastname = hero.lastname,
+         herotitle = hero.title,
+         heropower = hero.power,
+         herocity= hero.city;
+ 
+         console.log(herotitle,hero.title);
+          
+         herotitle="IRONMAN";
+         console.log(herotitle, hero.title); */
+
+
+        //destructuring
+         var {title: herotitle, 
+            firstname : herofirstname, 
+            lastname : herolastname, 
+            title: herotitle, 
+            power: heropower,
+            city : herocity}=hero;
+
+            console.log(herotitle);
+            console.log(hero.title);
+            herotitle="Ironmonger";
+            console.log(herotitle,hero.title); 
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
