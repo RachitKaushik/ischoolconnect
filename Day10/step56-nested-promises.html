@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCall1 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        console.log("Success: Response from async Call 1");
+                    }else{
+                        console.log("Reject from async Call 1");
+                    }
+                },1000)
+            })
+        };
+
+        let asyncCall2 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        console.log(asyncCall1());
+                    }else{
+                        console.log("Reject from async Call 2");
+                    }
+                },2000)
+            })
+        };
+        console.log(asyncCall2());
+// this is for multiple promises
+      /*  let asyncCall3 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        console.log(asyncCall2());
+                    }else{
+                        console.log("Reject from async Call 3");
+                    }
+                },3000)
+            })
+        };
+         
+        Promise.all([asyncCall1(),asyncCall2(),asyncCall3()])
+        .then((res)=>console.log(res))
+        .catch((error)=>console.log(error))
+        .finally(()=>console.log("All promises are complete")) 
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     /*   console.log("log from line 9");
+        console.log("log from line 10");
+        setTimeout(function(){
+            if(false){
+                console.log("log from line 13");
+            }else{
+                console.log("error");
+            }
+        },2000)
+        console.log("log from line 18");
+        */
+       
+
+        /*promise will take 2 parameter 1:resolve function 2:reject function
+        if the condtion is true, resolve will execute which will call the .then function in which res contain the content of the resolve
+        if the condtion is false, reject will execute which will call the .catch function in which error contain the content of the reject
+        */
+        let promise= new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Success : resolve message"); //it will call .then fnc implicitly
+                }else
+                reject("error  : reject message"); //it will call the .catch function
+            },4000)
+        });
+        promise.then((res)=>{   //res will contain "success : resolve message"
+            console.log("Then is: ",res)//here res will contain the resolve part
+            return res.toUpperCase();
+        })
+        promise.then((res)=>{   //res will contain "success : resolve message"
+            console.log("Then is: ",res)//here res will contain the resolve part
+            return res.toUpperCase();
+        })
+
+        promise.then((res)=>{   //res will contain "success : resolve message"
+            console.log("Then is: ",res)//here res will contain the resolve part
+            return res.toUpperCase();
+        })
+
+
+        .catch((error)=>{
+            console.log("Catch  :",error) //here the parameter will contain the reject part
+        })
+        .finally(()=>{
+            console.log("Promise is Complete")
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
